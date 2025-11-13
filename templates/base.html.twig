@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bonjour animé</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff8e7;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      font-size: 4em;
+      font-weight: bold;
+      text-transform: uppercase;
+      animation: couleurs 5s infinite alternate;
+    }
+
+    @keyframes couleurs {
+      0%   { color: #e63946; } /* rouge vif */
+      25%  { color: #f1c40f; } /* jaune doré */
+      50%  { color: #27ae60; } /* vert intense */
+      75%  { color: #2980b9; } /* bleu profond */
+      100% { color: #8e44ad; } /* violet africain */
+    }
+  </style>
+</head>
+<body>
+  <h1>Bonjour</h1>
+</body>
+</html>
