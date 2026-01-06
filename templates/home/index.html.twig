@@ -1,11 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - {{ 'Your Name'|upper }}{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<div class="hero">
-    <h1 style="font-size: 5em; margin: 0;">{{ 'Djust Esther NKENE NZAME'|upper }}</h1>
-    <p style="font-size: 1.5em; margin: 20px 0;">Bienvenue dans mon monde</p>
-    <a href="{{ path('plan') }}" class="btn-plan">🚀 DÉCOUVRIR MON PLAN</a>
+<div class="row g-4">
+
+    <div class="col-md-6">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body">
+                <h2>À propos de moi</h2>
+                <p>Je suis étudiante en première année de BUT Réseaux et Télécommunications.</p>
+                <p>Qui aime beaucoup de chose</p>
+                <a href="#" class="btn btn-info">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body">
+                <h2>Mes études</h2>
+                <p>Je suis actuellement en formation en BUT Réseaux et Télécommunications.</p>
+                <p>Cette formation me permet d’acquérir des compétences techniques solides en réseau.</p>
+                <a href="#" class="btn btn-info">Découvrir mon parcours</a>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
