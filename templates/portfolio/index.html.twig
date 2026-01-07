@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+<h1 class="mb-4">Mon Portfolio</h1>
+
+<div class="row g-4">
+
+    <!-- Projet 1 -->
+    <div class="col-md-4">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body">
+                <h5 class="card-title">Projet Réseau</h5>
+                <p class="card-text">
+                    Mise en place d’une infrastructure réseau avec adressage IP
+                    et configuration de routeurs.
+                </p>
+            </div>
+            <div class="card-footer text-center">
+                <span class="badge bg-info">Réseau</span>
+                <span class="badge bg-info">BUT R&T</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projet 2 -->
+    <div class="col-md-4">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body">
+                <h5 class="card-title">Site Web Symfony</h5>
+                <p class="card-text">
+                    Développement d’un site personnel avec Symfony,
+                    Twig et Bootstrap.
+                </p>
+            </div>
+            <div class="card-footer text-center">
+                <span class="badge bg-info">Web</span>
+                <span class="badge bg-info">Symfony</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projet 3 -->
+    <div class="col-md-4">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body">
+                <h5 class="card-title">Projet Sécurité</h5>
+                <p class="card-text">
+                    Sensibilisation à la cybersécurité et mise en place
+                    de bonnes pratiques.
+                </p>
+            </div>
+            <div class="card-footer text-center">
+                <span class="badge bg-info">Sécurité</span>
+                <span class="badge bg-info">Cybersécurité</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
