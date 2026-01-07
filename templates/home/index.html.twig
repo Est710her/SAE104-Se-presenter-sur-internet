@@ -1,17 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil – Esther{% endblock %}
+
 {% block body %}
 <div class="row g-4">
 
+    <!-- Carte Profil -->
     <div class="col-md-6">
         <div class="card bg-secondary text-light h-100">
             <div class="card-body text-center">
+                <!-- Photo de profil -->
                 <img src="/image/20250804_205237.jpg"
                      alt="Photo de profil"
-                     class="rounded-circle mb-3"
-                     width="140">
-
+                     class="profile mb-3">
 
                 <h2>Nkene Nzame Djust Esther</h2>
-                <p class="text-info">Étudiante en BUT Réseaux et Télécommunications .</p>
+                <p class="text-info">Étudiante en BUT Réseaux et Télécommunications</p>
 
                 <p>
                     Je suis étudiante en première année de BUT Réseaux et Télécommunications.
@@ -20,24 +24,46 @@
                     Qui aime beaucoup de choses.
                 </p>
 
-                <a href="{{ path('app_cv') }}" class="btn btn-info">
+                <!-- Bouton CV -->
+                <a href="/cv" class="btn btn-info">
                     Voir mon CV
                 </a>
-
             </div>
         </div>
     </div>
 
+    <!-- Carte Études -->
     <div class="col-md-6">
         <div class="card bg-secondary text-light h-100">
             <div class="card-body">
                 <h2>Mes études</h2>
                 <p>Je suis actuellement en formation en BUT Réseaux et Télécommunications.</p>
                 <p>Cette formation me permet d’acquérir des compétences techniques solides en réseau.</p>
-                <a href="#" class="btn btn-info">Découvrir mon parcours</a>
+
+                <!-- Bouton Portfolio -->
+                <a href="/portfolio" class="btn btn-info">Découvrir mon parcours</a>
             </div>
         </div>
     </div>
 
 </div>
+
+<!-- Nouvelle section : Hobbies / Ce que j'aime -->
+<div class="row g-4 mt-4">
+    <div class="col-12">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body">
+                <h2>Mes hobbies / Ce que j'aime</h2>
+                <ul>
+                    <li>Programmation et projets web</li>
+                    <li>Lecture</li>
+                    <li>Voyages et découvertes</li>
+                    <li>Musique et cinéma</li>
+                    <!-- Ajoute ici tout ce que tu aimes -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
