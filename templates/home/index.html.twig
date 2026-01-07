@@ -1,17 +1,29 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Accueil{% endblock %}
-
 {% block body %}
 <div class="row g-4">
 
     <div class="col-md-6">
         <div class="card bg-secondary text-light h-100">
-            <div class="card-body">
-                <h2>À propos de moi</h2>
-                <p>Je suis étudiante en première année de BUT Réseaux et Télécommunications.</p>
-                <p>Qui aime beaucoup de chose</p>
-                <a href="#" class="btn btn-info">En savoir plus</a>
+            <div class="card-body text-center">
+
+                <img src="{{ asset('images/photo.jpg') }}"
+                     alt="Photo de profil"
+                     class="rounded-circle mb-3"
+                     width="140">
+
+                <h2>Nom Prénom</h2>
+                <p class="text-info">Étudiante en BUT Réseaux et Télécommunications</p>
+
+                <p>
+                    Je suis étudiante en première année de BUT Réseaux et Télécommunications.
+                </p>
+                <p>
+                    Qui aime beaucoup de choses.
+                </p>
+
+                <a href="{{ path('app_cv') }}" class="btn btn-info">
+                    Voir mon CV
+                </a>
+
             </div>
         </div>
     </div>
