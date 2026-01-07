@@ -14,4 +14,3 @@ class CvController extends AbstractController
         return $this->render('cv/index.html.twig');
     }
 }
-
