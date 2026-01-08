@@ -10,7 +10,7 @@
     <!-- PDF ajusté à une seule vue -->
     <div class="cv-container mx-auto">
         <iframe
-            src="/pdf/cv_NKENE_NZAME_Djust_Esther.pdf.pdf"
+            src="/pdf/cv_NKENE_NZAME_Djust_Esther.pdf.pdf#zoom=FitB"
             class="cv-frame">
         </iframe>
     </div>
@@ -27,19 +27,35 @@
 </div>
 
 <style>
-    .cv-container {
-        max-width: 800px;   /* largeur raisonnable */
-        height: 500px;      /* HAUTEUR FIXE → pas de scroll */
-        margin: auto;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
+/* Container responsive pour le CV */
+.cv-container {
+    max-width: 900px;       /* largeur maximale raisonnable */
+    height: 90vh;           /* prend presque toute la hauteur de l’écran */
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;       /* pas de scroll dans l'iframe */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
 
-    .cv-frame {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
+/* iframe du PDF */
+.cv-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Bouton violet */
+.violet-btn {
+    background-color: #6f42c1;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.violet-btn:hover {
+    background-color: #5a34a3;
+}
 </style>
 {% endblock %}
