@@ -3,60 +3,64 @@
 {% block title %}Portfolio{% endblock %}
 
 {% block body %}
-<h1 class="mb-4">Mon Portfolio</h1>
+<h1 class="mb-4 text-center">My Portfolio</h1>
 
 <div class="row g-4">
 
-    <!-- Projet 1 -->
+    <!-- Carte Administrer -->
     <div class="col-md-4">
-        <div class="card bg-secondary text-light h-100">
-            <div class="card-body">
-                <h5 class="card-title">Projet Réseau</h5>
-                <p class="card-text">
-                    Mise en place d’une infrastructure réseau avec adressage IP
-                    et configuration de routeurs.
-                </p>
+        <a href="/administrer" class="text-decoration-none">
+            <div class="card portfolio-card bg-secondary text-light h-100 text-center">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h3 class="card-title">Administrer</h3>
+                    <p class="card-text">Gérer et configurer des systèmes et réseaux.</p>
+                </div>
             </div>
-            <div class="card-footer text-center">
-                <span class="badge bg-info">Réseau</span>
-                <span class="badge bg-info">BUT R&T</span>
-            </div>
-        </div>
+        </a>
     </div>
 
-    <!-- Projet 2 -->
+    <!-- Carte Connecter -->
     <div class="col-md-4">
-        <div class="card bg-secondary text-light h-100">
-            <div class="card-body">
-                <h5 class="card-title">Site Web Symfony</h5>
-                <p class="card-text">
-                    Développement d’un site personnel avec Symfony,
-                    Twig et Bootstrap.
-                </p>
+        <a href="/connecter" class="text-decoration-none">
+            <div class="card portfolio-card bg-secondary text-light h-100 text-center">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h3 class="card-title">Connecter</h3>
+                    <p class="card-text">Établir et maintenir des connexions réseau fiables.</p>
+                </div>
             </div>
-            <div class="card-footer text-center">
-                <span class="badge bg-info">Web</span>
-                <span class="badge bg-info">Symfony</span>
-            </div>
-        </div>
+        </a>
     </div>
 
-    <!-- Projet 3 -->
+    <!-- Carte Programmer -->
     <div class="col-md-4">
-        <div class="card bg-secondary text-light h-100">
-            <div class="card-body">
-                <h5 class="card-title">Projet Sécurité</h5>
-                <p class="card-text">
-                    Sensibilisation à la cybersécurité et mise en place
-                    de bonnes pratiques.
-                </p>
+        <a href="/programmer" class="text-decoration-none">
+            <div class="card portfolio-card bg-secondary text-light h-100 text-center">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h3 class="card-title">Programmer</h3>
+                    <p class="card-text">Développer des applications et scripts pour automatiser.</p>
+                </div>
             </div>
-            <div class="card-footer text-center">
-                <span class="badge bg-info">Sécurité</span>
-                <span class="badge bg-info">Cybersécurité</span>
-            </div>
-        </div>
+        </a>
     </div>
 
 </div>
+
+<style>
+.portfolio-card {
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    background-color: #3a2a6a;
+}
+
+.portfolio-card .card-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+</style>
 {% endblock %}
