@@ -12,7 +12,7 @@
         <!-- Natation -->
         <div class="col-md-6 col-lg-3">
             <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('images/natation.jpg') }}"  {# Vérifie que le dossier s'appelle bien 'images' dans public #}
+                <img src="{{ asset('image/natation.jpg') }}"
                      class="card-img-top"
                      alt="Natation">
                 <div class="card-body">
@@ -24,7 +24,7 @@
         <!-- Netflix -->
         <div class="col-md-6 col-lg-3">
             <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('images/netflix.jpg') }}"
+                <img src="{{ asset('image/netflix.jpg') }}"
                      class="card-img-top"
                      alt="Netflix">
                 <div class="card-body">
@@ -36,7 +36,7 @@
         <!-- Lecture -->
         <div class="col-md-6 col-lg-3">
             <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('images/lecture.jpg') }}"
+                <img src="{{ asset('image/lecture.jpg') }}"
                      class="card-img-top"
                      alt="Lecture">
                 <div class="card-body">
@@ -48,7 +48,7 @@
         <!-- Manger -->
         <div class="col-md-6 col-lg-3">
             <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('images/manger.jpg') }}"
+                <img src="{{ asset('image/manger.jpg') }}"
                      class="card-img-top"
                      alt="Manger">
                 <div class="card-body">
@@ -60,29 +60,6 @@
     </div>
 </div>
 
-{# CSS intégré pour les cards #}
 <style>
 .hobby-card {
-    background-color: #2a184d;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    transition: transform 0.3s;
-}
-.hobby-card:hover {
-    transform: translateY(-10px);
-}
-.hobby-card img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-.card-title {
-    font-weight: bold;
-    color: #fff;
-}
-</style>
-{% endblock %}
-
+    background-
