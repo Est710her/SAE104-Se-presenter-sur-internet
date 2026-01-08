@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes hobbies{% endblock %}
+
+{% block body %}
+<div class="container my-5 text-light">
+
+    <h1 class="text-center mb-5">Mes hobbies</h1>
+
+    <div class="row g-4">
+
+        <!-- Natation -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-dark text-light text-center h-100">
+                <img src="/images/natation.jpg" class="card-img-top" alt="Natation">
+                <div class="card-body">
+                    <h5 class="card-title">Natation</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Netflix -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-dark text-light text-center h-100">
+                <img src="/images/netflix.jpg" class="card-img-top" alt="Netflix">
+                <div class="card-body">
+                    <h5 class="card-title">Regarder Netflix</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lecture -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-dark text-light text-center h-100">
+                <img src="/images/lecture.jpg" class="card-img-top" alt="Lecture">
+                <div class="card-body">
+                    <h5 class="card-title">Lire</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manger -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-dark text-light text-center h-100">
+                <img src="/images/manger.jpg" class="card-img-top" alt="Manger">
+                <div class="card-body">
+                    <h5 class="card-title">Manger</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
