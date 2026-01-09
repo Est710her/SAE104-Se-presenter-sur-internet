@@ -9,73 +9,43 @@
 
     <div class="row g-4">
 
-        <!-- Natation -->
         <div class="col-md-6 col-lg-3">
-            <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('image/natation.jpg') }}" class="card-img-top" alt="Natation" />
+            <div class="card text-center h-100">
+                <img src="{{ asset('image/natation.jpg') }}" alt="Natation">
                 <div class="card-body">
-                    <h5 class="card-title">Natation</h5>
+                    <h5>Natation</h5>
                 </div>
             </div>
         </div>
 
-        <!-- Netflix -->
         <div class="col-md-6 col-lg-3">
-            <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('image/netflix.jpg') }}" class="card-img-top" alt="Netflix" />
+            <div class="card text-center h-100">
+                <img src="{{ asset('image/netflix.jpg') }}" alt="Netflix">
                 <div class="card-body">
-                    <h5 class="card-title">Regarder Netflix</h5>
+                    <h5>Netflix</h5>
                 </div>
             </div>
         </div>
 
-        <!-- Lecture -->
         <div class="col-md-6 col-lg-3">
-            <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('image/lecture.jpg') }}" class="card-img-top" alt="Lecture" />
+            <div class="card text-center h-100">
+                <img src="{{ asset('image/lecture.jpg') }}" alt="Lecture">
                 <div class="card-body">
-                    <h5 class="card-title">Lire</h5>
+                    <h5>Lire</h5>
                 </div>
             </div>
         </div>
 
-        <!-- Manger -->
         <div class="col-md-6 col-lg-3">
-            <div class="card hobby-card text-center h-100">
-                <img src="{{ asset('image/manger.jpg') }}" class="card-img-top" alt="Manger" />
+            <div class="card text-center h-100">
+                <img src="{{ asset('image/manger.jpg') }}" alt="Manger">
                 <div class="card-body">
-                    <h5 class="card-title">Manger</h5>
+                    <h5>Manger</h5>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
-
-<style>
-.hobby-card {
-    background-color: #2a184d; /* couleur violette foncée */
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    transition: transform 0.3s;
-}
-
-.hobby-card:hover {
-    transform: translateY(-10px);
-}
-
-.hobby-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.card-title {
-    font-weight: bold;
-    color: #fff;
-}
-</style>
 {% endblock %}
+
