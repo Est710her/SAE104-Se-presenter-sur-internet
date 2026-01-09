@@ -22,7 +22,7 @@ class PortfolioController extends AbstractController
         $items = [
             [
                 'image' => '/images/admin1.jpg',
-                'text' => 'J’ai appris à configurer un serveur et installer des services essentiels.'
+                'text' => 'Les compétences acquises en R102, R103 et SAÉ102 m’ont permis de configurer des switchs, d’adapter mes branchements et de concevoir des réseaux Internet.'
             ],
             [
                 'image' => '/images/admin2.jpg',
@@ -66,11 +66,11 @@ class PortfolioController extends AbstractController
         $items = [
             [
                 'image' => '/images/prog1.jpg',
-                'text' => 'J’ai appris à coder en Python pour automatiser des tâches.'
+                'text' => 'À travers de nombreux TP et un projet en R107, j’ai développé mes connaissances en programmation afin de résoudre diverses situations.'
             ],
             [
                 'image' => '/images/prog2.jpg',
-                'text' => 'J’ai appris à créer des scripts et petites applications.'
+                'text' => 'Les bases apprises en R109 et lors de la SAÉ104 m’ont permis de maîtriser l’environnement CSS et HTML, savoir résoudre mes erreurs et concevoir un site web.'
             ],
         ];
 
@@ -81,3 +81,4 @@ class PortfolioController extends AbstractController
         ]);
     }
 }
+
