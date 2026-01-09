@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<h1 class="mb-4 text-center">{{ title }}</h1>
+<p class="text-center">{{ description }}</p>
+
+<h3 class="mt-5 text-center">Mes apprentissages</h3>
+
+<div class="row g-4 mt-3">
+    {% for item in items %}
+        <div class="col-md-6"> {# 2 images = 2 colonnes #}
+            <div class="card h-100 text-center">
+                <img src="{{ item.image }}" class="card-img-top" alt="{{ title }}">
+                <div class="card-body">
+                    <p class="card-text">{{ item.text }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="text-center mt-4">
+    <a href="{{ path('app_portfolio') }}" class="btn btn-primary">Retour au portfolio</a>
+</div>
+
+<style>
+.card {
+    background-color: #3a2a6a;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.card-text {
+    color: #f1f1f1;
+    font-size: 0.95rem;
+}
+</style>
+{% endblock %}
