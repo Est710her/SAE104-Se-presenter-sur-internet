@@ -1,41 +1,125 @@
-<?php
+{% extends 'base.html.twig' %}
 
-namespace App\Controller;
+{% block title %}Home – Esther{% endblock %}
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Mime\Email;
-use Symfony\Component\Mailer\MailerInterface;
+{% block body %}
+<div class="row g-4">
 
-class HomeController extends AbstractController
-{
-    #[Route('/', name: 'app_home')]
-    public function index(Request $request, MailerInterface $mailer): Response
-    {
-        // Vérifier si le formulaire est soumis
-        if ($request->isMethod('POST')) {
-            $name = $request->request->get('name');
-            $email = $request->request->get('email');
-            $messageContent = $request->request->get('message');
+    <!-- Profile Card -->
+    <div class="col-md-6">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body text-center">
+                <!-- Profile Photo -->
+                <img src="/image/20250804_205237.jpg"
+                     alt="Profile photo"
+                     class="profile mb-3">
 
-            if ($name && $email && $messageContent) {
-                $emailMessage = (new Email())
-                    ->from($email) // l'adresse de la personne
-                    ->to('djustesther@gmail.com') // ton adresse
-                    ->subject('Nouveau message de contact de ' . $name)
-                    ->text("Nom: $name\nEmail: $email\nMessage:\n$messageContent");
+                <h2>Nkene Nzame Djust Esther</h2>
+                <p class="text-info">Student in Bachelor of Technology (BUT) – Networks and Telecommunications</p>
 
-                $mailer->send($emailMessage);
+                <p>
+                    I am a first-year student in the Bachelor of Technology (BUT) – Networks and Telecommunications.
+                </p>
+                <p>
+                    I have a wide range of interests.
+                </p>
 
-                $this->addFlash('success', 'Votre message a été envoyé avec succès !');
-                return $this->redirectToRoute('app_home');
-            } else {
-                $this->addFlash('error', 'Merci de remplir tous les champs.');
-            }
-        }
+                <!-- CV Button -->
+                <a href="/cv" class="violet-btn btn-lg mb-2">
+                    View my CV
+                </a>
 
-        return $this->render('home/index.html.twig');
-    }
+                <!-- Hobbies Button -->
+                <a href="/hobbies" class="violet-btn btn-lg">
+                    My Hobbies
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Studies Card -->
+    <div class="col-md-6">
+        <div class="card bg-secondary text-light h-100">
+            <div class="card-body">
+                <h2>My Studies</h2>
+                <p>I am currently studying for a Bachelor of Technology (BUT) in Networks and Telecommunications.</p>
+                <p>This program allows me to gain solid technical skills in networking.</p>
+
+                <!-- Portfolio Button -->
+                <a href="/portfolio" class="violet-btn btn-lg">Discover my journey</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Contact Section -->
+<div class="mt-5 p-5 bg-dark text-light rounded">
+    <h2 class="text-center mb-4">Contactez-moi</h2>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">{{ message }}</div>
+        {% endfor %}
+    {% endfor %}
+
+    <form method="post" class="mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Votre nom" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Votre email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea name="message" id="message" rows="4" class="form-control" placeholder="Votre message" required></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+    </form>
+</div>
+
+<style>
+.profile {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #6c5ce7;
 }
+.bg-dark {
+    background-color: #3a2a6a !important;
+}
+.form-label {
+    color: #f1f1f1;
+}
+.form-control {
+    border-radius: 10px;
+}
+.btn-primary {
+    background-color: #6c5ce7;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #5941a9;
+}
+.alert-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.alert-error {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+</style>
+{% endblock %}
+
