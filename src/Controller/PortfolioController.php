@@ -21,11 +21,11 @@ class PortfolioController extends AbstractController
     {
         $items = [
             [
-                'image' => '/image/admin1.jpg',
+                'image' => '/images/admin1.jpg',
                 'text' => 'J’ai appris à configurer un serveur et installer des services essentiels.'
             ],
             [
-                'image' => '/image/admin2.jpg',
+                'image' => '/images/admin2.jpg',
                 'text' => 'J’ai appris à sécuriser le réseau et gérer les utilisateurs efficacement.'
             ],
         ];
@@ -37,17 +37,39 @@ class PortfolioController extends AbstractController
         ]);
     }
 
-    // Page détaillée Prog
-    #[Route('/prog', name: 'prog')]
+    // Page détaillée Connecter
+    #[Route('/connecter', name: 'connecter')]
+    public function connecter(): Response
+    {
+        $items = [
+            [
+                'image' => '/images/connect1.jpg',
+                'text' => 'J’ai appris à établir des connexions réseau stables.'
+            ],
+            [
+                'image' => '/images/connect2.jpg',
+                'text' => 'J’ai appris à diagnostiquer et résoudre des problèmes de connexion.'
+            ],
+        ];
+
+        return $this->render('portfolio/detail.html.twig', [
+            'title' => 'Connecter',
+            'description' => 'Établir et maintenir des connexions réseau fiables.',
+            'items' => $items
+        ]);
+    }
+
+    // Page détaillée Programmer
+    #[Route('/programmer', name: 'programmer')]
     public function prog(): Response
     {
         $items = [
             [
-                'image' => '/image/prog1.jpg',
+                'image' => '/images/prog1.jpg',
                 'text' => 'J’ai appris à coder en Python pour automatiser des tâches.'
             ],
             [
-                'image' => '/image/prog2.jpg',
+                'image' => '/images/prog2.jpg',
                 'text' => 'J’ai appris à créer des scripts et petites applications.'
             ],
         ];
@@ -59,3 +81,4 @@ class PortfolioController extends AbstractController
         ]);
     }
 }
+
