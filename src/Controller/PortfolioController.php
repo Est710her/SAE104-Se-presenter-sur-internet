@@ -8,36 +8,54 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PortfolioController extends AbstractController
 {
+    // Page principale du portfolio
     #[Route('/portfolio', name: 'app_portfolio')]
     public function index(): Response
     {
         return $this->render('portfolio/index.html.twig');
     }
 
+    // Page détaillée Administrer
     #[Route('/administrer', name: 'administrer')]
     public function administrer(): Response
     {
-        return $this->render('portfolio/administrer.html.twig', [
-            'images' => ['/images/admin1.jpg', '/images/admin2.jpg'],
+        $items = [
+            [
+                'image' => '/images/admin1.jpg',
+                'text' => 'J’ai appris à configurer un serveur et installer des services essentiels.'
+            ],
+            [
+                'image' => '/images/admin2.jpg',
+                'text' => 'J’ai appris à sécuriser le réseau et gérer les utilisateurs efficacement.'
+            ],
+        ];
+
+        return $this->render('portfolio/detail.html.twig', [
+            'title' => 'Administrer',
             'description' => 'Gérer et configurer des systèmes et réseaux.',
+            'items' => $items
         ]);
     }
 
-    #[Route('/connecter', name: 'connecter')]
-    public function connecter(): Response
+    // Page détaillée Prog
+    #[Route('/prog', name: 'prog')]
+    public function prog(): Response
     {
-        return $this->render('portfolio/connecter.html.twig', [
-            'images' => ['/images/connect1.jpg', '/images/connect2.jpg'],
-            'description' => 'Établir et maintenir des connexions réseau fiables.',
-        ]);
-    }
+        $items = [
+            [
+                'image' => '/image/prog1.jpg',
+                'text' => 'J’ai appris à coder en Python pour automatiser des tâches.'
+            ],
+            [
+                'image' => '/image/prog2.jpg',
+                'text' => 'J’ai appris à créer des scripts et petites applications.'
+            ],
+        ];
 
-    #[Route('/programmer', name: 'programmer')]
-    public function programmer(): Response
-    {
-        return $this->render('portfolio/programmer.html.twig', [
-            'images' => ['/images/program1.jpg', '/images/program2.jpg'],
+        return $this->render('portfolio/detail.html.twig', [
+            'title' => 'Prog',
             'description' => 'Développer des applications et scripts pour automatiser.',
+            'items' => $items
         ]);
     }
 }
