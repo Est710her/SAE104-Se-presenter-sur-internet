@@ -21,11 +21,11 @@ class PortfolioController extends AbstractController
     {
         $items = [
             [
-                'image' => '/images/admin1.jpg',
+                'image' => '/image/admin1.jpg',
                 'text' => 'J’ai appris à configurer un serveur et installer des services essentiels.'
             ],
             [
-                'image' => '/images/admin2.jpg',
+                'image' => '/image/admin2.jpg',
                 'text' => 'J’ai appris à sécuriser le réseau et gérer les utilisateurs efficacement.'
             ],
         ];
