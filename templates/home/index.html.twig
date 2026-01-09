@@ -1,55 +1,41 @@
-{% extends 'base.html.twig' %}
+<?php
 
-{% block title %}Home – Esther{% endblock %}
+namespace App\Controller;
 
-{% block body %}
-<div class="row g-4">
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
 
-    <!-- Profile Card -->
-    <div class="col-md-6">
-        <div class="card bg-secondary text-light h-100">
-            <div class="card-body text-center">
-                <!-- Profile Photo -->
-                <img src="/image/20250804_205237.jpg"
-                     alt="Profile photo"
-                     class="profile mb-3">
+class HomeController extends AbstractController
+{
+    #[Route('/', name: 'app_home')]
+    public function index(Request $request, MailerInterface $mailer): Response
+    {
+        // Vérifier si le formulaire est soumis
+        if ($request->isMethod('POST')) {
+            $name = $request->request->get('name');
+            $email = $request->request->get('email');
+            $messageContent = $request->request->get('message');
 
-                <h2>Nkene Nzame Djust Esther</h2>
-                <p class="text-info">Student in Bachelor of Technology (BUT) – Networks and Telecommunications</p>
+            if ($name && $email && $messageContent) {
+                $emailMessage = (new Email())
+                    ->from($email) // l'adresse de la personne
+                    ->to('djustesther@gmail.com') // ton adresse
+                    ->subject('Nouveau message de contact de ' . $name)
+                    ->text("Nom: $name\nEmail: $email\nMessage:\n$messageContent");
 
-                <p>
-                    I am a first-year student in the Bachelor of Technology (BUT) – Networks and Telecommunications.
-                </p>
-                <p>
-                    I have a wide range of interests.
-                </p>
+                $mailer->send($emailMessage);
 
-                <!-- CV Button -->
-                <a href="/cv" class="violet-btn btn-lg mb-2">
-                    View my CV
-                </a>
+                $this->addFlash('success', 'Votre message a été envoyé avec succès !');
+                return $this->redirectToRoute('app_home');
+            } else {
+                $this->addFlash('error', 'Merci de remplir tous les champs.');
+            }
+        }
 
-                <!-- Hobbies Button (same style as CV) -->
-                <a href="/hobbies" class="violet-btn btn-lg">
-                    My Hobbies
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Studies Card -->
-    <div class="col-md-6">
-        <div class="card bg-secondary text-light h-100">
-            <div class="card-body">
-                <h2>My Studies</h2>
-                <p>I am currently studying for a Bachelor of Technology (BUT) in Networks and Telecommunications.</p>
-                <p>This program allows me to gain solid technical skills in networking.</p>
-
-                <!-- Portfolio Button -->
-                <a href="/portfolio" class="violet-btn btn-lg">Discover my journey</a>
-            </div>
-        </div>
-    </div>
-
-</div>
-{% endblock %}
+        return $this->render('home/index.html.twig');
+    }
+}
