@@ -1,10 +1,7 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Home – Esther{% endblock %}
-
 {% block body %}
 <div class="row g-4">
-
     <!-- Profile Card -->
     <div class="col-md-6">
         <div class="card bg-secondary text-light h-100">
@@ -13,22 +10,18 @@
                 <img src="/image/20250804_205237.jpg"
                      alt="Profile photo"
                      class="profile mb-3">
-
                 <h2>Nkene Nzame Djust Esther</h2>
                 <p class="text-info">Student in Bachelor of Technology (BUT) – Networks and Telecommunications</p>
-
                 <p>
                     I am a first-year student in the Bachelor of Technology (BUT) – Networks and Telecommunications.
                 </p>
                 <p>
                     I have a wide range of interests.
                 </p>
-
                 <!-- CV Button -->
                 <a href="/cv" class="violet-btn btn-lg mb-2">
                     View my CV
                 </a>
-
                 <!-- Hobbies Button -->
                 <a href="/hobbies" class="violet-btn btn-lg">
                     My Hobbies
@@ -36,7 +29,6 @@
             </div>
         </div>
     </div>
-
     <!-- Studies Card -->
     <div class="col-md-6">
         <div class="card bg-secondary text-light h-100">
@@ -44,25 +36,20 @@
                 <h2>My Studies</h2>
                 <p>I am currently studying for a Bachelor of Technology (BUT) in Networks and Telecommunications.</p>
                 <p>This program allows me to gain solid technical skills in networking.</p>
-
                 <!-- Portfolio Button -->
                 <a href="/portfolio" class="violet-btn btn-lg">Discover my journey</a>
             </div>
         </div>
     </div>
-
 </div>
-
 <!-- Contact Section -->
 <div class="mt-5 p-5 bg-dark text-light rounded">
     <h2 class="text-center mb-4">Contactez-moi</h2>
-
     {% for label, messages in app.flashes %}
         {% for message in messages %}
             <div class="alert alert-{{ label }}">{{ message }}</div>
         {% endfor %}
     {% endfor %}
-
     <form method="post" class="mx-auto" style="max-width: 600px;">
         <div class="mb-3">
             <label for="name" class="form-label">Nom</label>
@@ -81,7 +68,6 @@
         </div>
     </form>
 </div>
-
 <style>
 .profile {
     width: 150px;
@@ -122,4 +108,3 @@
 }
 </style>
 {% endblock %}
-
