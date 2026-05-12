@@ -46,7 +46,7 @@
     .hero-info-cards{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;width:100%;}
     .info-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;backdrop-filter:blur(8px);}
     .info-card-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;}
-    .info-card-value{font-size:0.85rem;font-weight:600;color:var(--text);}
+    .info-card-value{font-size:0.78rem;font-weight:600;color:var(--text);word-break:break-all;}
     .section{padding:6rem 4rem;position:relative;z-index:1;max-width:1200px;margin:0 auto;}
     .section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.65rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--violet2);margin-bottom:0.8rem;}
     .section-tag::before{content:"";width:1.5rem;height:1px;background:currentColor;}
@@ -99,10 +99,7 @@
     .jordao-item span{color:var(--muted);}
     .captures-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:1rem;}
     .capture-box{background:rgba(18,16,43,0.8);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
-    .capture-box img{width:100%;display:block;border-bottom:1px solid var(--border);}
-    .capture-placeholder{width:100%;height:160px;background:linear-gradient(135deg,rgba(108,92,231,0.08),rgba(253,121,168,0.04));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;border-bottom:1px solid var(--border);}
-    .capture-placeholder span{font-size:2rem;}
-    .capture-placeholder p{font-size:0.7rem;color:var(--muted);}
+    .capture-box img{width:100%;height:200px;object-fit:cover;display:block;border-bottom:1px solid var(--border);}
     .capture-label{padding:0.7rem 1rem;font-size:0.75rem;font-weight:600;color:var(--muted);}
     .gibbs-title-block{display:flex;align-items:center;gap:0.6rem;font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;margin-bottom:1.2rem;}
     .gibbs-title-block::before{content:"►";font-size:0.8rem;}
@@ -164,10 +161,22 @@
       <img src="image/IMG_1961.png" alt="Esther" class="hero-photo"/>
     </div>
     <div class="hero-info-cards">
-      <div class="info-card"><div class="info-card-label">Formation</div><div class="info-card-value">BUT R&T </div></div>
-      <div class="info-card"><div class="info-card-label">Année</div><div class="info-card-value">2025 – 2026</div></div>
-      <div class="info-card"><div class="info-card-label">Contact <div class="info-card-value">Tel:07 43 52 40 27</div><div class="info-card-value">Email:djustesther@gmail.com</div></div>
-      <div class="info-card"><div class="info-card-label">Compétences</div><div class="info-card-value">3 présentées</div></div>
+      <div class="info-card">
+        <div class="info-card-label">Formation</div>
+        <div class="info-card-value">BUT R&T</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Année</div>
+        <div class="info-card-value">2025 – 2026</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Téléphone</div>
+        <div class="info-card-value">07 43 52 40 27</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Email</div>
+        <div class="info-card-value">djustesther@gmail.com</div>
+      </div>
     </div>
   </div>
 </div>
@@ -243,9 +252,7 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANEL C1 — Réseaux / LAN / VLAN / RIP
-══════════════════════════════════ -->
+<!-- PANEL C1 -->
 <div class="detail-panel" id="panel-c1">
   <div class="detail-inner">
     <div class="detail-top">
@@ -276,22 +283,21 @@
     </div>
 
     <div class="jordao-block">
-      <div class="jordao-block-title" style="color:var(--rose)">Captures Du Projet</div>
+      <div class="jordao-block-title" style="color:var(--violet2)">Captures Du Projet</div>
       <div class="captures-grid">
         <div class="capture-box">
-          <img src="image/Capture d’écran 2026-05-12 053107.png" alt="Routage inter-ste"/>
-          <div class="capture-label">Topologie </div>
+          <img src="image/Capture d'écran 2026-05-12 053107.png" alt="Topologie réseau"/>
+          <div class="capture-label">📡 Topologie du réseau</div>
         </div>
         <div class="capture-box">
-          <img src="image/Capture d'écran 2026-05-12 052629.png" alt="Routage inter-Vlan"/>
-          <div class="capture-label">Configuration sous-interfaces </div>
+          <img src="image/Capture d'écran 2026-05-12 052629.png" alt="Configuration sous-interfaces"/>
+          <div class="capture-label">🔀 Configuration sous-interfaces</div>
         </div>
         <div class="capture-box">
-          <img src="image/Capture d'écran 2026-05-12 052429.png" alt="Protocole RIP"/>
-          <div class="capture-label">Configuration </div>
+          <img src="image/Capture d'écran 2026-05-12 052429.png" alt="Configuration RIP"/>
+          <div class="capture-label">🔄 Configuration du protocole RIP</div>
         </div>
       </div>
-      <p style="font-size:0.75rem;color:var(--muted);font-style:italic;"></p>
     </div>
 
     <div class="jordao-block">
@@ -303,13 +309,23 @@
         via les commandes <strong>ping</strong> et <strong>show ip route</strong>.
       </div>
     </div>
+
+    <div class="jordao-block">
+      <div class="gibbs-title-block" style="color:var(--violet2)">Analyse Réflexive — Modèle De Gibbs</div>
+      <div class="gibbs-grid">
+        <div class="gibbs-box"><div class="gibbs-n">1</div><div class="gibbs-step" style="color:var(--violet2)">Étape 1</div><div class="gibbs-step-title">Expérience</div><div class="gibbs-body">Durant les TP de semestre 2, j'ai configuré sur du matériel physique un réseau local complet avec VLANs et routage dynamique RIP, en salle de TP avec des routeurs et switches Cisco réels.</div></div>
+        <div class="gibbs-box"><div class="gibbs-n">2</div><div class="gibbs-step" style="color:var(--violet2)">Étape 2</div><div class="gibbs-step-title">Sentiments</div><div class="gibbs-body"><em>[À compléter : satisfaction de travailler sur du vrai matériel ? Stress face aux pannes physiques ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">3</div><div class="gibbs-step" style="color:var(--violet2)">Étape 3</div><div class="gibbs-step-title">Évaluation</div><div class="gibbs-body"><em>[À compléter : ce qui a bien marché, ce qui était difficile.]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">4</div><div class="gibbs-step" style="color:var(--violet2)">Étape 4</div><div class="gibbs-step-title">Analyse</div><div class="gibbs-body"><em>[À compléter : pourquoi ces difficultés ? Quelles ressources t'ont aidée ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">5</div><div class="gibbs-step" style="color:var(--violet2)">Étape 5</div><div class="gibbs-step-title">Conclusion</div><div class="gibbs-body"><em>[À compléter : qu'as-tu retenu ? Qu'aurais-tu fait différemment ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">6</div><div class="gibbs-step" style="color:var(--violet2)">Étape 6</div><div class="gibbs-step-title">Plan d'action</div><div class="gibbs-body"><em>[À compléter : ex: approfondir OSPF, préparer la certification CCNA...]</em></div></div>
+      </div>
     </div>
+
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANEL C2 — Signaux / CAN / CNA
-══════════════════════════════════ -->
+<!-- PANEL C2 -->
 <div class="detail-panel" id="panel-c2">
   <div class="detail-inner">
     <div class="detail-top">
@@ -343,19 +359,18 @@
       <div class="jordao-block-title" style="color:var(--rose)">Captures Du Projet</div>
       <div class="captures-grid">
         <div class="capture-box">
-          <img src="image/IMG_1700.jpeg" alt="Conversion CAN"/>
-          <div class="capture-label">Carte experimentale </div>
+          <img src="image/IMG_1700.jpeg" alt="Carte expérimentale CAN/CNA"/>
+          <div class="capture-label">🔌 Maquette de conversion CAN/CNA</div>
         </div>
         <div class="capture-box">
-          <img src="image/IMG_1698.jpeg" alt="Conversion CNA"/>
-          <div class="capture-label">Signal </div>
+          <img src="image/IMG_1698.jpeg" alt="Signal oscilloscope"/>
+          <div class="capture-label">📊 Signal sur oscilloscope</div>
         </div>
         <div class="capture-box">
-          <img src="image/IMG_1825.jpeg" alt="Multiplexage"/>
-          <div class="capture-label">Signal </div>
+          <img src="image/IMG_1825.jpeg" alt="Signal multiplication"/>
+          <div class="capture-label">✖️ Multiplication de signaux</div>
         </div>
       </div>
-      <p style="font-size:0.75rem;color:var(--muted);font-style:italic;"></p>
     </div>
 
     <div class="jordao-block">
@@ -367,13 +382,23 @@
         les phénomènes physiques sous-jacents à la transmission de l'information.
       </div>
     </div>
+
+    <div class="jordao-block">
+      <div class="gibbs-title-block" style="color:var(--rose)">Analyse Réflexive — Modèle De Gibbs</div>
+      <div class="gibbs-grid">
+        <div class="gibbs-box"><div class="gibbs-n">1</div><div class="gibbs-step" style="color:var(--rose)">Étape 1</div><div class="gibbs-step-title">Expérience</div><div class="gibbs-body">En TP, j'ai analysé des signaux analogiques et numériques en réalisant des conversions CAN/CNA, des multiplications de signaux et en utilisant des outils de mesure comme l'oscilloscope.</div></div>
+        <div class="gibbs-box"><div class="gibbs-n">2</div><div class="gibbs-step" style="color:var(--rose)">Étape 2</div><div class="gibbs-step-title">Sentiments</div><div class="gibbs-body"><em>[À compléter : curiosité face aux signaux ? Difficulté à lier le cours de maths aux mesures physiques ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">3</div><div class="gibbs-step" style="color:var(--rose)">Étape 3</div><div class="gibbs-step-title">Évaluation</div><div class="gibbs-body"><em>[À compléter : ce qui était clair, ce qui était abstrait.]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">4</div><div class="gibbs-step" style="color:var(--rose)">Étape 4</div><div class="gibbs-step-title">Analyse</div><div class="gibbs-body"><em>[À compléter : quels cours t'ont aidée ? Quelle méthode as-tu utilisée pour progresser ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">5</div><div class="gibbs-step" style="color:var(--rose)">Étape 5</div><div class="gibbs-step-title">Conclusion</div><div class="gibbs-body"><em>[À compléter : qu'as-tu compris sur les signaux ? Quel lien avec les télécommunications ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">6</div><div class="gibbs-step" style="color:var(--rose)">Étape 6</div><div class="gibbs-step-title">Plan d'action</div><div class="gibbs-body"><em>[À compléter : ex: approfondir la modulation AM/FM, pratiquer les maths du signal...]</em></div></div>
+      </div>
     </div>
+
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     PANEL C3 — Web / Symfony / HTML
-══════════════════════════════════ -->
+<!-- PANEL C3 -->
 <div class="detail-panel" id="panel-c3">
   <div class="detail-inner">
     <div class="detail-top">
@@ -403,39 +428,48 @@
       <div class="jordao-item"><strong>Git & GitHub :</strong> <span>Versionnage du code source et hébergement du projet sur GitHub pour le déploiement via GitHub Pages.</span></div>
     </div>
 
-     <div class="jordao-block">
-        <div class="jordao-block-title" style="color:var(--cyan)">Démarche Du Projet</div>
-        <div class="jordao-item">
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--cyan)">Captures Du Projet</div>
+      <div class="captures-grid">
+        <div class="capture-box">
+          <img src="image/pro2.png" alt="Commandes Symfony"/>
+          <div class="capture-label">⚙️ Commandes d'initialisation Symfony</div>
+        </div>
+        <div class="capture-box">
+          <img src="image/programmation.png" alt="Code HTML Twig"/>
+          <div class="capture-label">🖊️ Écriture du code HTML / Twig</div>
+        </div>
+        <div class="capture-box">
+          <img src="image/IMG_1855.jpeg" alt="Rendu site web"/>
+          <div class="capture-label">🌐 Affichage du site web</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--cyan)">Démarche Du Projet</div>
+      <div class="jordao-item">
         Le projet s'est déroulé en plusieurs étapes : installation et prise en main de Symfony,
         création de la structure du site (routes, contrôleurs, templates Twig), développement
         des différentes pages (accueil, CV, hobbies, portfolio), mise en forme avec CSS,
         puis déploiement du projet sur GitHub. Ce projet constitue le e-portfolio que vous consultez actuellement.
-        </div>
-    </div>
-    </div>
-    
-</div>
-    <div class="jordao-block">
-      <div class="jordao-block-title" style="color:var(--rose)">Captures Du Projet</div>
-      <div class="captures-grid">
-        <div class="capture-box">
-          <img src="image/pro2.png" alt="Commandes symfony"/>
-          <div class="capture-label">Commande d'initialisation du projet symfony  </div>
-        </div>
-        <div class="capture-box">
-          <img src="image/programmation.png" alt="Écriture du code HTML / Twig"/>
-          <div class="capture-label">Bout de code</div>
-        </div>
-        <div class="capture-box">
-          <img src="image/IMG_1855.jpeg" alt="Page web"/>
-          <div class="capture-label">Affichage </div>
-        </div>
       </div>
-      <p style="font-size:0.75rem;color:var(--muted);font-style:italic;"></p>
     </div>
+
+    <div class="jordao-block">
+      <div class="gibbs-title-block" style="color:var(--cyan)">Analyse Réflexive — Modèle De Gibbs</div>
+      <div class="gibbs-grid">
+        <div class="gibbs-box"><div class="gibbs-n">1</div><div class="gibbs-step" style="color:var(--cyan)">Étape 1</div><div class="gibbs-step-title">Expérience</div><div class="gibbs-body">J'ai développé un site web de présentation personnelle en utilisant Symfony, HTML et CSS, depuis l'installation du framework jusqu'au déploiement sur GitHub.</div></div>
+        <div class="gibbs-box"><div class="gibbs-n">2</div><div class="gibbs-step" style="color:var(--cyan)">Étape 2</div><div class="gibbs-step-title">Sentiments</div><div class="gibbs-body"><em>[À compléter : satisfaction de créer quelque chose de visuel ? Frustration face aux erreurs Symfony ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">3</div><div class="gibbs-step" style="color:var(--cyan)">Étape 3</div><div class="gibbs-step-title">Évaluation</div><div class="gibbs-body"><em>[À compléter : ce qui était accessible (HTML/CSS), ce qui était complexe (Symfony, Twig).]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">4</div><div class="gibbs-step" style="color:var(--cyan)">Étape 4</div><div class="gibbs-step-title">Analyse</div><div class="gibbs-body"><em>[À compléter : quelles ressources t'ont aidée ? Documentation, YouTube, camarades ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">5</div><div class="gibbs-step" style="color:var(--cyan)">Étape 5</div><div class="gibbs-step-title">Conclusion</div><div class="gibbs-body"><em>[À compléter : qu'as-tu appris sur le développement web ?]</em></div></div>
+        <div class="gibbs-box"><div class="gibbs-n">6</div><div class="gibbs-step" style="color:var(--cyan)">Étape 6</div><div class="gibbs-step-title">Plan d'action</div><div class="gibbs-body"><em>[À compléter : ex: apprendre JavaScript, approfondir PHP, découvrir React...]</em></div></div>
+      </div>
     </div>
+
+  </div>
 </div>
-   
 
 <hr class="hr"/>
 
