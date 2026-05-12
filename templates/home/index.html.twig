@@ -101,14 +101,25 @@
     .capture-box{background:rgba(18,16,43,0.8);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
     .capture-box img{width:100%;height:200px;object-fit:cover;display:block;border-bottom:1px solid var(--border);}
     .capture-label{padding:0.7rem 1rem;font-size:0.75rem;font-weight:600;color:var(--muted);}
-    .gibbs-title-block{display:flex;align-items:center;gap:0.6rem;font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;margin-bottom:1.2rem;}
-    .gibbs-title-block::before{content:"►";font-size:0.8rem;}
-    .gibbs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
-    .gibbs-box{background:rgba(18,16,43,0.7);border:1px solid var(--border);border-radius:12px;padding:1.4rem;position:relative;}
-    .gibbs-n{position:absolute;right:1rem;top:0.5rem;font-family:"Playfair Display",serif;font-size:3.5rem;font-weight:700;opacity:0.05;line-height:1;}
-    .gibbs-step{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;}
-    .gibbs-step-title{font-family:"Playfair Display",serif;font-size:0.95rem;font-weight:700;margin-bottom:0.6rem;}
-    .gibbs-body{font-size:0.82rem;color:var(--muted);line-height:1.7;}
+
+    /* AUTO-EVAL TABLE */
+    .autoeval-table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+    .autoeval-table th{background:rgba(108,92,231,0.15);color:var(--violet2);font-weight:600;padding:0.9rem 1.2rem;text-align:left;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid var(--border);}
+    .autoeval-table td{padding:0.9rem 1.2rem;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}
+    .autoeval-table tr:last-child td{border-bottom:none;}
+    .autoeval-table tr:hover td{background:rgba(108,92,231,0.05);}
+    .note-badge{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;font-weight:700;font-size:0.9rem;}
+    .note-debut{background:rgba(253,121,168,0.15);color:var(--rose);}
+    .note-fin{background:rgba(162,155,254,0.15);color:var(--violet2);}
+    .note-fin.good{background:rgba(116,185,255,0.15);color:var(--cyan);}
+    .comp-name{font-family:"Playfair Display",serif;font-weight:700;font-size:0.95rem;}
+    .progress-wrap{display:flex;align-items:center;gap:0.8rem;}
+    .progress-bar{flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden;}
+    .progress-fill{height:100%;border-radius:999px;}
+    .fill-v{background:linear-gradient(90deg,var(--violet),var(--violet2));}
+    .fill-r{background:linear-gradient(90deg,var(--rose),#fd4a8a);}
+    .fill-c{background:linear-gradient(90deg,var(--cyan),#0984e3);}
+
     .contact-wrap{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:3rem;backdrop-filter:blur(8px);max-width:620px;margin:0 auto;}
     .form-group{margin-bottom:1.2rem;}
     .form-label{display:block;font-size:0.78rem;font-weight:500;margin-bottom:0.4rem;color:var(--muted);}
@@ -128,6 +139,7 @@
       .section{padding:4rem 1.5rem;}
       .detail-inner{padding:2rem 1.5rem;}
       footer{padding:1.5rem;}
+      .autoeval-table td,.autoeval-table th{padding:0.7rem 0.8rem;}
     }
   </style>
 </head>
@@ -139,6 +151,7 @@
     <li><a href="#accueil">Accueil</a></li>
     <li><a href="#hobbies">Hobbies</a></li>
     <li><a href="#competences">Compétences</a></li>
+    <li><a href="#autoevaluation">Auto-éval</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -204,7 +217,6 @@
   <h2>Les 3 Compétences</h2>
   <p class="section-sub">Cliquez sur une compétence pour voir le document de preuve et l'analyse réflexive.</p>
   <div class="comp-cards">
-
     <div class="comp-card" onclick="togglePanel('c1')">
       <div class="comp-num">01</div>
       <span class="comp-pill">Compétence 1</span>
@@ -219,7 +231,6 @@
       </ul>
       <button class="comp-open-btn">Voir la preuve &amp; réflexion →</button>
     </div>
-
     <div class="comp-card" onclick="togglePanel('c2')">
       <div class="comp-num">02</div>
       <span class="comp-pill">Compétence 2</span>
@@ -234,7 +245,6 @@
       </ul>
       <button class="comp-open-btn">Voir la preuve &amp; réflexion →</button>
     </div>
-
     <div class="comp-card" onclick="togglePanel('c3')">
       <div class="comp-num">03</div>
       <span class="comp-pill">Compétence 3</span>
@@ -248,7 +258,6 @@
       </ul>
       <button class="comp-open-btn">Voir la preuve &amp; réflexion →</button>
     </div>
-
   </div>
 </div>
 
@@ -262,17 +271,10 @@
       </div>
       <button class="close-btn" onclick="togglePanel('c1')">✕ Fermer</button>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--violet2)">Contexte Du Projet</div>
-      <div class="jordao-item">
-        Dans le cadre de mes travaux pratiques du <strong>semestre 2</strong> de BUT Réseaux &amp; Télécommunications,
-        j'ai réalisé un projet de configuration d'un réseau local complet incluant la mise en place de VLANs,
-        le routage inter-VLAN et le protocole de routage dynamique RIP. Ce projet s'est déroulé
-        <strong>sur du matériel physique</strong> (routeurs et commutateurs Cisco) en salle de TP.
-      </div>
+      <div class="jordao-item">Dans le cadre de mes travaux pratiques du <strong>semestre 2</strong> de BUT Réseaux &amp; Télécommunications, j'ai réalisé un projet de configuration d'un réseau local complet incluant la mise en place de VLANs, le routage inter-VLAN et le protocole de routage dynamique RIP. Ce projet s'est déroulé <strong>sur du matériel physique</strong> (routeurs et commutateurs Cisco) en salle de TP.</div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--violet2)">Technologies Et Concepts Mis En Œuvre</div>
       <div class="jordao-item"><strong>Réseau Local (LAN) :</strong> <span>Configuration des interfaces réseau, adressage IP statique et câblage logique entre les équipements physiques (switches, routeurs Cisco).</span></div>
@@ -281,47 +283,27 @@
       <div class="jordao-item"><strong>Protocole RIP :</strong> <span>Configuration du protocole de routage dynamique RIP pour assurer la propagation automatique des routes entre les équipements du réseau.</span></div>
       <div class="jordao-item"><strong>CLI Cisco (IOS) :</strong> <span>Utilisation de la ligne de commande Cisco IOS pour configurer et administrer les équipements physiques en salle de TP.</span></div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--violet2)">Captures Du Projet</div>
       <div class="captures-grid">
         <div class="capture-box">
-          <img src="image/Capture d’écran 2026-05-12 053107.png" alt="Topologie réseau"/>
-          <div class="capture-label">📡 Topologie du réseau</div>
+          <img src="image/Capture d'écran 2026-05-12 053107.png" alt="Topologie réseau"/>
+          <div class="capture-label"> Topologie du réseau</div>
         </div>
         <div class="capture-box">
           <img src="image/Capture d'écran 2026-05-12 052629.png" alt="Configuration sous-interfaces"/>
-          <div class="capture-label">🔀 Configuration sous-interfaces</div>
+          <div class="capture-label">Configuration sous-interfaces</div>
         </div>
         <div class="capture-box">
           <img src="image/Capture d'écran 2026-05-12 052429.png" alt="Configuration RIP"/>
-          <div class="capture-label">🔄 Configuration du protocole RIP</div>
+          <div class="capture-label">Configuration du protocole RIP</div>
         </div>
       </div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--violet2)">Démarche Du Projet</div>
-      <div class="jordao-item">
-        Le projet s'est déroulé en plusieurs phases : analyse de la topologie cible et du cahier des charges,
-        configuration physique des équipements (câblage, interfaces), création des VLANs et des trunks,
-        mise en place du routage inter-VLAN et activation de RIP, puis validation par des tests de connectivité
-        via les commandes <strong>ping</strong> et <strong>show ip route</strong>.
-      </div>
+      <div class="jordao-item">Le projet s'est déroulé en plusieurs phases : analyse de la topologie cible et du cahier des charges, configuration physique des équipements (câblage, interfaces), création des VLANs et des trunks, mise en place du routage inter-VLAN et activation de RIP, puis validation par des tests de connectivité via les commandes <strong>ping</strong> et <strong>show ip route</strong>.</div>
     </div>
-
-    <div class="jordao-block">
-      <div class="gibbs-title-block" style="color:var(--violet2)">Analyse Réflexive — Modèle De Gibbs</div>
-      <div class="gibbs-grid">
-        <div class="gibbs-box"><div class="gibbs-n">1</div><div class="gibbs-step" style="color:var(--violet2)">Étape 1</div><div class="gibbs-step-title">Expérience</div><div class="gibbs-body">Durant les TP de semestre 2, j'ai configuré sur du matériel physique un réseau local complet avec VLANs et routage dynamique RIP, en salle de TP avec des routeurs et switches Cisco réels.</div></div>
-        <div class="gibbs-box"><div class="gibbs-n">2</div><div class="gibbs-step" style="color:var(--violet2)">Étape 2</div><div class="gibbs-step-title">Sentiments</div><div class="gibbs-body"><em>[À compléter : satisfaction de travailler sur du vrai matériel ? Stress face aux pannes physiques ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">3</div><div class="gibbs-step" style="color:var(--violet2)">Étape 3</div><div class="gibbs-step-title">Évaluation</div><div class="gibbs-body"><em>[À compléter : ce qui a bien marché, ce qui était difficile.]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">4</div><div class="gibbs-step" style="color:var(--violet2)">Étape 4</div><div class="gibbs-step-title">Analyse</div><div class="gibbs-body"><em>[À compléter : pourquoi ces difficultés ? Quelles ressources t'ont aidée ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">5</div><div class="gibbs-step" style="color:var(--violet2)">Étape 5</div><div class="gibbs-step-title">Conclusion</div><div class="gibbs-body"><em>[À compléter : qu'as-tu retenu ? Qu'aurais-tu fait différemment ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">6</div><div class="gibbs-step" style="color:var(--violet2)">Étape 6</div><div class="gibbs-step-title">Plan d'action</div><div class="gibbs-body"><em>[À compléter : ex: approfondir OSPF, préparer la certification CCNA...]</em></div></div>
-      </div>
-    </div>
-
   </div>
 </div>
 
@@ -335,17 +317,10 @@
       </div>
       <button class="close-btn" onclick="togglePanel('c2')">✕ Fermer</button>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--rose)">Contexte Du Projet</div>
-      <div class="jordao-item">
-        Dans le cadre des travaux pratiques de BUT R&T, j'ai réalisé des séances d'analyse de signaux
-        électroniques et de télécommunications. Ces TP portaient sur la conversion des signaux
-        <strong>analogiques vers numériques (CAN)</strong> et <strong>numériques vers analogiques (CNA)</strong>,
-        ainsi que sur des opérations de multiplication de signaux et leur modélisation mathématique.
-      </div>
+      <div class="jordao-item">Dans le cadre des travaux pratiques de BUT R&T, j'ai réalisé des séances d'analyse de signaux électroniques et de télécommunications. Ces TP portaient sur la conversion des signaux <strong>analogiques vers numériques (CAN)</strong> et <strong>numériques vers analogiques (CNA)</strong>, ainsi que sur des opérations de multiplication de signaux et leur modélisation mathématique.</div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--rose)">Technologies Et Concepts Mis En Œuvre</div>
       <div class="jordao-item"><strong>Conversion Analogique-Numérique (CAN) :</strong> <span>Étude du processus d'échantillonnage, de quantification et de codage d'un signal analogique en signal numérique.</span></div>
@@ -354,47 +329,27 @@
       <div class="jordao-item"><strong>Modélisation mathématique :</strong> <span>Utilisation de représentations mathématiques (séries de Fourier, spectres fréquentiels) pour caractériser et analyser les signaux de transmission.</span></div>
       <div class="jordao-item"><strong>Mesure et analyse :</strong> <span>Utilisation d'oscilloscopes et d'analyseurs de spectre pour mesurer et visualiser les signaux en temps réel.</span></div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--rose)">Captures Du Projet</div>
       <div class="captures-grid">
         <div class="capture-box">
           <img src="image/IMG_1700.jpeg" alt="Carte expérimentale CAN/CNA"/>
-          <div class="capture-label">🔌 Maquette de conversion CAN/CNA</div>
+          <div class="capture-label"> Maquette de conversion CAN/CNA</div>
         </div>
         <div class="capture-box">
           <img src="image/IMG_1698.jpeg" alt="Signal oscilloscope"/>
-          <div class="capture-label">📊 Signal sur oscilloscope</div>
+          <div class="capture-label"> Signal sur oscilloscope</div>
         </div>
         <div class="capture-box">
           <img src="image/IMG_1825.jpeg" alt="Signal multiplication"/>
-          <div class="capture-label">✖️ Multiplication de signaux</div>
+          <div class="capture-label"> Multiplication de signaux</div>
         </div>
       </div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--rose)">Démarche Du Projet</div>
-      <div class="jordao-item">
-        Les TP se sont déroulés en plusieurs étapes : observation et mesure des signaux d'entrée,
-        réalisation des conversions CAN et CNA, analyse des résultats sur oscilloscope,
-        puis modélisation mathématique pour caractériser les signaux et comprendre
-        les phénomènes physiques sous-jacents à la transmission de l'information.
-      </div>
+      <div class="jordao-item">Les TP se sont déroulés en plusieurs étapes : observation et mesure des signaux d'entrée, réalisation des conversions CAN et CNA, analyse des résultats sur oscilloscope, puis modélisation mathématique pour caractériser les signaux et comprendre les phénomènes physiques sous-jacents à la transmission de l'information.</div>
     </div>
-
-    <div class="jordao-block">
-      <div class="gibbs-title-block" style="color:var(--rose)">Analyse Réflexive — Modèle De Gibbs</div>
-      <div class="gibbs-grid">
-        <div class="gibbs-box"><div class="gibbs-n">1</div><div class="gibbs-step" style="color:var(--rose)">Étape 1</div><div class="gibbs-step-title">Expérience</div><div class="gibbs-body">En TP, j'ai analysé des signaux analogiques et numériques en réalisant des conversions CAN/CNA, des multiplications de signaux et en utilisant des outils de mesure comme l'oscilloscope.</div></div>
-        <div class="gibbs-box"><div class="gibbs-n">2</div><div class="gibbs-step" style="color:var(--rose)">Étape 2</div><div class="gibbs-step-title">Sentiments</div><div class="gibbs-body"><em>[À compléter : curiosité face aux signaux ? Difficulté à lier le cours de maths aux mesures physiques ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">3</div><div class="gibbs-step" style="color:var(--rose)">Étape 3</div><div class="gibbs-step-title">Évaluation</div><div class="gibbs-body"><em>[À compléter : ce qui était clair, ce qui était abstrait.]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">4</div><div class="gibbs-step" style="color:var(--rose)">Étape 4</div><div class="gibbs-step-title">Analyse</div><div class="gibbs-body"><em>[À compléter : quels cours t'ont aidée ? Quelle méthode as-tu utilisée pour progresser ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">5</div><div class="gibbs-step" style="color:var(--rose)">Étape 5</div><div class="gibbs-step-title">Conclusion</div><div class="gibbs-body"><em>[À compléter : qu'as-tu compris sur les signaux ? Quel lien avec les télécommunications ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">6</div><div class="gibbs-step" style="color:var(--rose)">Étape 6</div><div class="gibbs-step-title">Plan d'action</div><div class="gibbs-body"><em>[À compléter : ex: approfondir la modulation AM/FM, pratiquer les maths du signal...]</em></div></div>
-      </div>
-    </div>
-
   </div>
 </div>
 
@@ -408,17 +363,10 @@
       </div>
       <button class="close-btn" onclick="togglePanel('c3')">✕ Fermer</button>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--cyan)">Contexte Du Projet</div>
-      <div class="jordao-item">
-        Dans le cadre de la SAÉ 1.04 "Se présenter sur Internet", j'ai conçu et développé un
-        <strong>site web de présentation personnelle</strong> en utilisant le framework Symfony,
-        le langage HTML et les feuilles de style CSS. Ce projet m'a permis d'acquérir les bases
-        de la programmation web et de comprendre l'architecture d'une application web moderne.
-      </div>
+      <div class="jordao-item">Dans le cadre de la SAÉ 1.04 "Se présenter sur Internet", j'ai conçu et développé un <strong>site web de présentation personnelle</strong> en utilisant le framework Symfony, le langage HTML et les feuilles de style CSS. Ce projet m'a permis d'acquérir les bases de la programmation web et de comprendre l'architecture d'une application web moderne.</div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--cyan)">Technologies Et Concepts Mis En Œuvre</div>
       <div class="jordao-item"><strong>Symfony (Framework PHP) :</strong> <span>Utilisation des commandes Symfony en ligne de commande pour créer le projet, générer les contrôleurs, configurer les routes et lancer le serveur de développement.</span></div>
@@ -427,47 +375,84 @@
       <div class="jordao-item"><strong>Architecture MVC :</strong> <span>Compréhension du modèle Modèle-Vue-Contrôleur utilisé par Symfony : séparation de la logique métier, de la présentation et du routage.</span></div>
       <div class="jordao-item"><strong>Git & GitHub :</strong> <span>Versionnage du code source et hébergement du projet sur GitHub pour le déploiement via GitHub Pages.</span></div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--cyan)">Captures Du Projet</div>
       <div class="captures-grid">
         <div class="capture-box">
           <img src="image/pro2.png" alt="Commandes Symfony"/>
-          <div class="capture-label">⚙️ Commandes d'initialisation Symfony</div>
+          <div class="capture-label"> Commandes d'initialisation Symfony</div>
         </div>
         <div class="capture-box">
           <img src="image/programmation.png" alt="Code HTML Twig"/>
-          <div class="capture-label">🖊️ Écriture du code HTML / Twig</div>
+          <div class="capture-label"> Écriture du code HTML / Twig</div>
         </div>
         <div class="capture-box">
           <img src="image/site.png" alt="Rendu site web"/>
-          <div class="capture-label">🌐 Affichage du site web</div>
+          <div class="capture-label"> Affichage du site web</div>
         </div>
       </div>
     </div>
-
     <div class="jordao-block">
       <div class="jordao-block-title" style="color:var(--cyan)">Démarche Du Projet</div>
-      <div class="jordao-item">
-        Le projet s'est déroulé en plusieurs étapes : installation et prise en main de Symfony,
-        création de la structure du site (routes, contrôleurs, templates Twig), développement
-        des différentes pages (accueil, CV, hobbies, portfolio), mise en forme avec CSS,
-        puis déploiement du projet sur GitHub. Ce projet constitue le e-portfolio que vous consultez actuellement.
-      </div>
+      <div class="jordao-item">Le projet s'est déroulé en plusieurs étapes : installation et prise en main de Symfony, création de la structure du site (routes, contrôleurs, templates Twig), développement des différentes pages (accueil, CV, hobbies, portfolio), mise en forme avec CSS, puis déploiement du projet sur GitHub.</div>
     </div>
+  </div>
+</div>
 
-    <div class="jordao-block">
-      <div class="gibbs-title-block" style="color:var(--cyan)">Analyse Réflexive — Modèle De Gibbs</div>
-      <div class="gibbs-grid">
-        <div class="gibbs-box"><div class="gibbs-n">1</div><div class="gibbs-step" style="color:var(--cyan)">Étape 1</div><div class="gibbs-step-title">Expérience</div><div class="gibbs-body">J'ai développé un site web de présentation personnelle en utilisant Symfony, HTML et CSS, depuis l'installation du framework jusqu'au déploiement sur GitHub.</div></div>
-        <div class="gibbs-box"><div class="gibbs-n">2</div><div class="gibbs-step" style="color:var(--cyan)">Étape 2</div><div class="gibbs-step-title">Sentiments</div><div class="gibbs-body"><em>[À compléter : satisfaction de créer quelque chose de visuel ? Frustration face aux erreurs Symfony ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">3</div><div class="gibbs-step" style="color:var(--cyan)">Étape 3</div><div class="gibbs-step-title">Évaluation</div><div class="gibbs-body"><em>[À compléter : ce qui était accessible (HTML/CSS), ce qui était complexe (Symfony, Twig).]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">4</div><div class="gibbs-step" style="color:var(--cyan)">Étape 4</div><div class="gibbs-step-title">Analyse</div><div class="gibbs-body"><em>[À compléter : quelles ressources t'ont aidée ? Documentation, YouTube, camarades ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">5</div><div class="gibbs-step" style="color:var(--cyan)">Étape 5</div><div class="gibbs-step-title">Conclusion</div><div class="gibbs-body"><em>[À compléter : qu'as-tu appris sur le développement web ?]</em></div></div>
-        <div class="gibbs-box"><div class="gibbs-n">6</div><div class="gibbs-step" style="color:var(--cyan)">Étape 6</div><div class="gibbs-step-title">Plan d'action</div><div class="gibbs-body"><em>[À compléter : ex: apprendre JavaScript, approfondir PHP, découvrir React...]</em></div></div>
-      </div>
-    </div>
+<hr class="hr"/>
 
+<!-- AUTO-EVALUATION -->
+<div class="section" id="autoevaluation">
+  <div class="section-tag">Bilan personnel</div>
+  <h2>Mon Auto-évaluation</h2>
+  <p class="section-sub">Évolution de mon niveau du début à la fin de la formation sur les 3 compétences.</p>
+
+  <div class="jordao-block">
+    <table class="autoeval-table">
+      <thead>
+        <tr>
+          <th>Compétence</th>
+          <th>Note début</th>
+          <th>Note fin</th>
+          <th>Progression</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="comp-name">Administrer</span></td>
+          <td><span class="note-badge note-debut">2/5</span></td>
+          <td><span class="note-badge note-fin">4/5</span></td>
+          <td>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill fill-v" style="width:80%"></div></div>
+              <span style="font-size:0.75rem;color:var(--violet2);font-weight:600;">4/5</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">Connecter</span></td>
+          <td><span class="note-badge note-debut">3/5</span></td>
+          <td><span class="note-badge note-fin good">4/5</span></td>
+          <td>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill fill-r" style="width:80%"></div></div>
+              <span style="font-size:0.75rem;color:var(--rose);font-weight:600;">4/5</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">Programmer</span></td>
+          <td><span class="note-badge note-debut">1/5</span></td>
+          <td><span class="note-badge note-fin" style="background:rgba(116,185,255,0.15);color:var(--cyan);">3/5</span></td>
+          <td>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill fill-c" style="width:60%"></div></div>
+              <span style="font-size:0.75rem;color:var(--cyan);font-weight:600;">3/5</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
