@@ -80,36 +80,42 @@
     .comp-ac-list{list-style:none;display:flex;flex-direction:column;gap:0.3rem;}
     .comp-ac-list li{font-size:0.78rem;display:flex;gap:0.5rem;align-items:flex-start;}
     .comp-ac-list li::before{content:"→";opacity:0.4;flex-shrink:0;}
-    .comp-open-btn{display:inline-flex;align-items:center;gap:0.3rem;margin-top:1rem;font-size:0.75rem;font-weight:600;text-decoration:none;border:none;background:none;cursor:pointer;transition:gap 0.2s;font-family:inherit;}
+    .comp-open-btn{display:inline-flex;align-items:center;gap:0.3rem;margin-top:1rem;font-size:0.75rem;font-weight:600;border:none;background:none;cursor:pointer;transition:gap 0.2s;font-family:inherit;}
     .comp-card:nth-child(1) .comp-open-btn{color:var(--violet2);}
     .comp-card:nth-child(2) .comp-open-btn{color:var(--rose);}
     .comp-card:nth-child(3) .comp-open-btn{color:var(--cyan);}
     .comp-open-btn:hover{gap:0.7rem;}
-    .detail-panel{display:none;padding:3rem 4rem;border-top:1px solid var(--border);position:relative;z-index:1;}
+    .detail-panel{display:none;border-top:1px solid var(--border);position:relative;z-index:1;}
     .detail-panel.open{display:block;}
-    .detail-inner{max-width:1100px;margin:0 auto;}
+    .detail-inner{max-width:1100px;margin:0 auto;padding:3rem 4rem;}
     .detail-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;}
     .close-btn{background:rgba(108,92,231,0.1);border:1px solid rgba(108,92,231,0.3);color:var(--violet2);padding:0.5rem 1.2rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.2s;}
     .close-btn:hover{background:rgba(108,92,231,0.2);}
-    .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2.5rem;}
-    .proof-box{background:rgba(26,23,64,0.6);border:1px solid var(--border);border-radius:12px;padding:1.4rem;backdrop-filter:blur(8px);}
-    .proof-box.wide{grid-column:span 2;}
-    @media(max-width:600px){.proof-box.wide{grid-column:span 1;}}
-    .proof-icon{font-size:1.4rem;margin-bottom:0.6rem;}
-    .proof-title{font-family:"Playfair Display",serif;font-size:0.85rem;font-weight:700;margin-bottom:0.5rem;color:var(--violet2);}
-    .proof-body{font-size:0.78rem;color:var(--muted);line-height:1.65;}
-    .proof-body em{font-style:italic;color:rgba(240,238,255,0.4);}
+    .jordao-block{background:rgba(26,23,64,0.6);border:1px solid var(--border);border-radius:14px;padding:2rem 2.2rem;margin-bottom:1.5rem;backdrop-filter:blur(8px);}
+    .jordao-block-title{display:flex;align-items:center;gap:0.6rem;font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;margin-bottom:1.2rem;}
+    .jordao-block-title::before{content:"►";font-size:0.8rem;}
+    .jordao-item{margin-bottom:0.9rem;font-size:0.85rem;line-height:1.7;}
+    .jordao-item strong{color:var(--text);}
+    .jordao-item span{color:var(--muted);}
+    .captures-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:1rem;}
+    .capture-box{background:rgba(18,16,43,0.8);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+    .capture-box img{width:100%;display:block;border-bottom:1px solid var(--border);}
+    .capture-placeholder{width:100%;height:160px;background:linear-gradient(135deg,rgba(108,92,231,0.08),rgba(253,121,168,0.04));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;border-bottom:1px solid var(--border);}
+    .capture-placeholder span{font-size:2rem;}
+    .capture-placeholder p{font-size:0.7rem;color:var(--muted);}
+    .capture-label{padding:0.7rem 1rem;font-size:0.75rem;font-weight:600;color:var(--muted);}
+    .gibbs-title-block{display:flex;align-items:center;gap:0.6rem;font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;margin-bottom:1.2rem;}
+    .gibbs-title-block::before{content:"►";font-size:0.8rem;}
     .gibbs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
-    .gibbs-box{background:rgba(26,23,64,0.6);border:1px solid var(--border);border-radius:12px;padding:1.4rem;backdrop-filter:blur(8px);position:relative;}
+    .gibbs-box{background:rgba(18,16,43,0.7);border:1px solid var(--border);border-radius:12px;padding:1.4rem;position:relative;}
     .gibbs-n{position:absolute;right:1rem;top:0.5rem;font-family:"Playfair Display",serif;font-size:3.5rem;font-weight:700;opacity:0.05;line-height:1;}
-    .gibbs-step{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--violet2);margin-bottom:0.3rem;}
-    .gibbs-title{font-family:"Playfair Display",serif;font-size:0.95rem;font-weight:700;margin-bottom:0.6rem;}
-    .gibbs-body{font-size:0.78rem;color:var(--muted);line-height:1.65;}
-    .gibbs-body em{font-style:italic;color:rgba(240,238,255,0.35);}
+    .gibbs-step{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.3rem;}
+    .gibbs-step-title{font-family:"Playfair Display",serif;font-size:0.95rem;font-weight:700;margin-bottom:0.6rem;}
+    .gibbs-body{font-size:0.82rem;color:var(--muted);line-height:1.7;}
     .contact-wrap{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:3rem;backdrop-filter:blur(8px);max-width:620px;margin:0 auto;}
     .form-group{margin-bottom:1.2rem;}
     .form-label{display:block;font-size:0.78rem;font-weight:500;margin-bottom:0.4rem;color:var(--muted);}
-    .form-input,.form-textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:inherit;font-size:0.85rem;transition:border-color 0.2s,box-shadow 0.2s;}
+    .form-input,.form-textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:inherit;font-size:0.85rem;transition:border-color 0.2s;}
     .form-input:focus,.form-textarea:focus{outline:none;border-color:rgba(108,92,231,0.5);box-shadow:0 0 0 3px rgba(108,92,231,0.1);}
     .form-textarea{resize:vertical;min-height:120px;}
     .form-submit{width:100%;padding:0.85rem;background:var(--violet);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.22s;}
@@ -118,12 +124,12 @@
     footer p{font-size:0.75rem;color:var(--muted);}
     .footer-heart{color:var(--rose);}
     @media(max-width:900px){
-      nav{padding:1rem 1.5rem;} .nav-links{gap:1.2rem;}
+      nav{padding:1rem 1.5rem;}.nav-links{gap:1rem;font-size:0.7rem;}
       .hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;gap:2.5rem;text-align:center;}
-      .hero-left{align-items:center;} .hero-desc{text-align:center;}
+      .hero-left{align-items:center;}.hero-desc{text-align:center;}
       .hero-right{order:-1;}
       .section{padding:4rem 1.5rem;}
-      .detail-panel{padding:2.5rem 1.5rem;}
+      .detail-inner{padding:2rem 1.5rem;}
       footer{padding:1.5rem;}
     }
   </style>
@@ -140,6 +146,7 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero" id="accueil">
   <div class="hero-left">
     <span class="hero-badge">BUT R&T · Soutenance 12 mai 2026</span>
@@ -154,13 +161,12 @@
     <div class="hero-photo-wrap">
       <div class="hero-photo-ring"></div>
       <div class="hero-photo-ring-mask"></div>
-      <!-- Remplace le src par ton chemin de photo -->
-      <img src="image/IMG_1961.png" alt="Esther" class="hero-photo"/>
+      <img src="image/20250804_205237.jpg" alt="Esther" class="hero-photo"/>
     </div>
     <div class="hero-info-cards">
-      <div class="info-card"><div class="info-card-label">Formation</div><div class="info-card-value">BUT R&T</div></div>
-      <div class="info-card"><div class="info-card-label">Année</div><div class="info-card-value">2024 – 2026</div></div>
-      <div class="info-card"><div class="info-card-label">Soutenance</div><div class="info-card-value">12 mai 2026</div></div>
+      <div class="info-card"><div class="info-card-label">Formation</div><div class="info-card-value">BUT R&T </div></div>
+      <div class="info-card"><div class="info-card-label">Année</div><div class="info-card-value">2025 – 2026</div></div>
+      <div class="info-card"><div class="info-card-label">Contactiv class="info-card-value">Tel:07 43 52 40 27</div><div class="info-card-value">Email:djustesther@gmail.com</div></div>
       <div class="info-card"><div class="info-card-label">Compétences</div><div class="info-card-value">3 présentées</div></div>
     </div>
   </div>
@@ -168,6 +174,7 @@
 
 <hr class="hr"/>
 
+<!-- HOBBIES -->
 <div class="section" id="hobbies">
   <div class="section-tag">Mes centres d'intérêt</div>
   <h2>Mes Hobbies</h2>
@@ -176,130 +183,279 @@
     <div class="hobby-card"><span class="hobby-emoji">🏊‍♀️</span><div class="hobby-name">Natation</div></div>
     <div class="hobby-card"><span class="hobby-emoji">🎬</span><div class="hobby-name">Regarder Netflix</div></div>
     <div class="hobby-card"><span class="hobby-emoji">📚</span><div class="hobby-name">Lire</div></div>
-    <div class="hobby-card"><span class="hobby-emoji">🍽️</span><div class="hobby-name">Manger</div></div>
+    <div class="hobby-card"><span class="hobby-emoji">✍️</span><div class="hobby-name">Écriture</div></div>
   </div>
 </div>
 
 <hr class="hr"/>
 
+<!-- COMPETENCES -->
 <div class="section" id="competences">
   <div class="section-tag">BUT R&T</div>
   <h2>Les 3 Compétences</h2>
-  <p class="section-sub">Cliquez sur une compétence pour voir le document de preuve et l'analyse réflexive Gibbs.</p>
+  <p class="section-sub">Cliquez sur une compétence pour voir le document de preuve et l'analyse réflexive.</p>
   <div class="comp-cards">
+
     <div class="comp-card" onclick="togglePanel('c1')">
       <div class="comp-num">01</div>
       <span class="comp-pill">Compétence 1</span>
       <h3 class="comp-title">Administrer les réseaux et l'Internet</h3>
-      <p class="comp-desc">Configurer et maintenir les équipements et services réseau dans un environnement professionnel.</p>
+      <p class="comp-desc">Configuration et administration d'un réseau local avec VLAN, routage inter-VLAN et protocole RIP sur matériel physique.</p>
       <hr class="comp-sep"/>
       <div class="comp-ac-label">Apprentissages Critiques</div>
       <ul class="comp-ac-list">
-        <li>Configurer des équipements réseau (routeurs, commutateurs)</li>
-        <li>Mettre en œuvre des protocoles de routage</li>
-        <li>Déployer des services réseau (DHCP, DNS, VPN…)</li>
+        <li>Configurer les fonctions de base du réseau local</li>
+        <li>Maîtriser les rôles des systèmes d'exploitation réseau</li>
+        <li>Configurer LAN, VLAN et protocole RIP</li>
       </ul>
-      <button class="comp-open-btn">Voir preuve &amp; réflexion →</button>
+      <button class="comp-open-btn">Voir la preuve &amp; réflexion →</button>
     </div>
+
     <div class="comp-card" onclick="togglePanel('c2')">
       <div class="comp-num">02</div>
       <span class="comp-pill">Compétence 2</span>
       <h3 class="comp-title">Connecter les entreprises et les usagers</h3>
-      <p class="comp-desc">Concevoir et déployer des solutions de connectivité adaptées aux besoins des organisations.</p>
+      <p class="comp-desc">Analyse de signaux analogiques et numériques : conversion CAN/CNA, multiplication et modélisation mathématique.</p>
       <hr class="comp-sep"/>
       <div class="comp-ac-label">Apprentissages Critiques</div>
       <ul class="comp-ac-list">
-        <li>Analyser les besoins en connectivité</li>
-        <li>Déployer des solutions Wi-Fi et LAN</li>
-        <li>Sécuriser les accès et les communications</li>
+        <li>Mesurer et analyser des signaux</li>
+        <li>Caractériser les signaux de transmission</li>
+        <li>Découvrir la modélisation mathématique de leur fonctionnement</li>
       </ul>
-      <button class="comp-open-btn">Voir preuve &amp; réflexion →</button>
+      <button class="comp-open-btn">Voir la preuve &amp; réflexion →</button>
     </div>
+
     <div class="comp-card" onclick="togglePanel('c3')">
       <div class="comp-num">03</div>
       <span class="comp-pill">Compétence 3</span>
       <h3 class="comp-title">Créer des outils et applications R&T</h3>
-      <p class="comp-desc">Développer des scripts, outils et applications répondant aux besoins des réseaux.</p>
+      <p class="comp-desc">Bases de la programmation web : création d'un site de présentation avec Symfony, HTML et CSS.</p>
       <hr class="comp-sep"/>
       <div class="comp-ac-label">Apprentissages Critiques</div>
       <ul class="comp-ac-list">
-        <li>Développer des scripts d'automatisation réseau</li>
-        <li>Utiliser des APIs et services réseau</li>
-        <li>Concevoir des outils de supervision</li>
+        <li>Connaître l'architecture et les technologies d'un site web</li>
+        <li>Utiliser un système informatique et ses outils</li>
       </ul>
-      <button class="comp-open-btn">Voir preuve &amp; réflexion →</button>
+      <button class="comp-open-btn">Voir la preuve &amp; réflexion →</button>
     </div>
+
   </div>
 </div>
 
-<!-- PANEL C1 -->
+<!-- ══════════════════════════════════
+     PANEL C1 — Réseaux / LAN / VLAN / RIP
+══════════════════════════════════ -->
 <div class="detail-panel" id="panel-c1">
   <div class="detail-inner">
     <div class="detail-top">
-      <div><div class="section-tag" style="color:var(--violet2)">Compétence 1</div><h2>Administrer </h2></div>
+      <div>
+        <div class="section-tag" style="color:var(--violet2)">Compétence 1 — Preuve & Réflexion</div>
+        <h2>Administrer les réseaux et l'Internet</h2>
+      </div>
       <button class="close-btn" onclick="togglePanel('c1')">✕ Fermer</button>
     </div>
-    <div class="section-tag" style="color:var(--violet2);margin-bottom:1.2rem;">Document de preuve (trace)</div>
-    <div class="proof-grid">
-      <div class="proof-box"><div class="proof-icon">📍</div><div class="proof-title">Contexte</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">📚</div><div class="proof-title">Savoirs</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">🛠</div><div class="proof-title">Savoir-faire</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">🤝</div><div class="proof-title">Savoir-être</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box wide"><div class="proof-icon">✅</div><div class="proof-title">Tâche réalisée &amp; Résultats</div><div class="proof-body"><em>[À remplir]</em></div></div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--violet2)">Contexte Du Projet</div>
+      <div class="jordao-item">
+        Dans le cadre de mes travaux pratiques du <strong>semestre 2</strong> de BUT Réseaux &amp; Télécommunications,
+        j'ai réalisé un projet de configuration d'un réseau local complet incluant la mise en place de VLANs,
+        le routage inter-VLAN et le protocole de routage dynamique RIP. Ce projet s'est déroulé
+        <strong>sur du matériel physique</strong> (routeurs et commutateurs Cisco) en salle de TP.
+      </div>
     </div>
-    <div class="section-tag" style="color:var(--violet2);margin-bottom:1.2rem;">Analyse réflexive — Modèle de Gibbs</div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--violet2)">Technologies Et Concepts Mis En Œuvre</div>
+      <div class="jordao-item"><strong>Réseau Local (LAN) :</strong> <span>Configuration des interfaces réseau, adressage IP statique et câblage logique entre les équipements physiques (switches, routeurs Cisco).</span></div>
+      <div class="jordao-item"><strong>VLAN :</strong> <span>Création et configuration de VLANs pour segmenter le réseau et isoler les flux entre les différents groupes d'utilisateurs.</span></div>
+      <div class="jordao-item"><strong>Routage Inter-VLAN :</strong> <span>Mise en place du routage entre les VLANs via un routeur (Router-on-a-Stick) avec sous-interfaces et encapsulation 802.1Q.</span></div>
+      <div class="jordao-item"><strong>Protocole RIP :</strong> <span>Configuration du protocole de routage dynamique RIP pour assurer la propagation automatique des routes entre les équipements du réseau.</span></div>
+      <div class="jordao-item"><strong>CLI Cisco (IOS) :</strong> <span>Utilisation de la ligne de commande Cisco IOS pour configurer et administrer les équipements physiques en salle de TP.</span></div>
+    </div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--violet2)">Captures Du Projet</div>
+      <div class="captures-grid">
+        <div class="capture-box">
+          <!-- <img src="images/capture-reseau-local.png" alt="Réseau local"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">📡 Topologie du réseau local</div>
+        </div>
+        <div class="capture-box">
+          <!-- <img src="images/capture-rip.png" alt="Configuration RIP"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">🔄 Configuration du protocole RIP</div>
+        </div>
+        <div class="capture-box">
+          <!-- <img src="images/capture-intervlan.png" alt="Routage inter-VLAN"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">🔀 Routage inter-VLAN</div>
+        </div>
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted);font-style:italic;">💡 Pour ajouter tes captures : décommente les balises img et remplace le chemin par tes fichiers.</p>
+    </div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--violet2)">Démarche Du Projet</div>
+      <div class="jordao-item">
+        Le projet s'est déroulé en plusieurs phases : analyse de la topologie cible et du cahier des charges,
+        configuration physique des équipements (câblage, interfaces), création des VLANs et des trunks,
+        mise en place du routage inter-VLAN et activation de RIP, puis validation par des tests de connectivité
+        via les commandes <strong>ping</strong> et <strong>show ip route</strong>.
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 
-<!-- PANEL C2 -->
+<!-- ══════════════════════════════════
+     PANEL C2 — Signaux / CAN / CNA
+══════════════════════════════════ -->
 <div class="detail-panel" id="panel-c2">
   <div class="detail-inner">
     <div class="detail-top">
-      <div><div class="section-tag" style="color:var(--rose)">Compétence 2</div><h2>Connecter </h2></div>
+      <div>
+        <div class="section-tag" style="color:var(--rose)">Compétence 2 — Preuve & Réflexion</div>
+        <h2>Connecter les entreprises et les usagers</h2>
+      </div>
       <button class="close-btn" onclick="togglePanel('c2')">✕ Fermer</button>
     </div>
-    <div class="section-tag" style="color:var(--rose);margin-bottom:1.2rem;">Document de preuve (trace)</div>
-    <div class="proof-grid">
-      <div class="proof-box"><div class="proof-icon">📍</div><div class="proof-title">Contexte</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">📚</div><div class="proof-title">Savoirs</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">🛠</div><div class="proof-title">Savoir-faire</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">🤝</div><div class="proof-title">Savoir-être</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box wide"><div class="proof-icon">✅</div><div class="proof-title">Tâche réalisée &amp; Résultats</div><div class="proof-body"><em>[À remplir]</em></div></div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--rose)">Contexte Du Projet</div>
+      <div class="jordao-item">
+        Dans le cadre des travaux pratiques de BUT R&T, j'ai réalisé des séances d'analyse de signaux
+        électroniques et de télécommunications. Ces TP portaient sur la conversion des signaux
+        <strong>analogiques vers numériques (CAN)</strong> et <strong>numériques vers analogiques (CNA)</strong>,
+        ainsi que sur des opérations de multiplication de signaux et leur modélisation mathématique.
+      </div>
     </div>
-    <div class="section-tag" style="color:var(--rose);margin-bottom:1.2rem;">Analyse réflexive — Modèle de Gibbs</div>
-    
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--rose)">Technologies Et Concepts Mis En Œuvre</div>
+      <div class="jordao-item"><strong>Conversion Analogique-Numérique (CAN) :</strong> <span>Étude du processus d'échantillonnage, de quantification et de codage d'un signal analogique en signal numérique.</span></div>
+      <div class="jordao-item"><strong>Conversion Numérique-Analogique (CNA) :</strong> <span>Reconstruction d'un signal analogique à partir d'une séquence de valeurs numériques, analyse de la fidélité de reconstruction.</span></div>
+      <div class="jordao-item"><strong>Multiplication de signaux :</strong> <span>Réalisation d'opérations de multiplication entre signaux pour comprendre les phénomènes de modulation utilisés en télécommunications.</span></div>
+      <div class="jordao-item"><strong>Modélisation mathématique :</strong> <span>Utilisation de représentations mathématiques (séries de Fourier, spectres fréquentiels) pour caractériser et analyser les signaux de transmission.</span></div>
+      <div class="jordao-item"><strong>Mesure et analyse :</strong> <span>Utilisation d'oscilloscopes et d'analyseurs de spectre pour mesurer et visualiser les signaux en temps réel.</span></div>
+    </div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--rose)">Captures Du Projet</div>
+      <div class="captures-grid">
+        <div class="capture-box">
+          <!-- <img src="images/capture-can.png" alt="Conversion CAN"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">📊 Conversion Analogique-Numérique (CAN)</div>
+        </div>
+        <div class="capture-box">
+          <!-- <img src="images/capture-cna.png" alt="Conversion CNA"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">📈 Conversion Numérique-Analogique (CNA)</div>
+        </div>
+        <div class="capture-box">
+          <!-- <img src="images/capture-multiplication.png" alt="Multiplication signaux"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">✖️ Multiplication de signaux</div>
+        </div>
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted);font-style:italic;">💡 Pour ajouter tes captures : décommente les balises img et remplace le chemin par tes fichiers.</p>
+    </div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--rose)">Démarche Du Projet</div>
+      <div class="jordao-item">
+        Les TP se sont déroulés en plusieurs étapes : observation et mesure des signaux d'entrée,
+        réalisation des conversions CAN et CNA, analyse des résultats sur oscilloscope,
+        puis modélisation mathématique pour caractériser les signaux et comprendre
+        les phénomènes physiques sous-jacents à la transmission de l'information.
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 
-<!-- PANEL C3 -->
+<!-- ══════════════════════════════════
+     PANEL C3 — Web / Symfony / HTML
+══════════════════════════════════ -->
 <div class="detail-panel" id="panel-c3">
   <div class="detail-inner">
     <div class="detail-top">
-      <div><div class="section-tag" style="color:var(--cyan)">Compétence 3</div><h2>Créer des outils et applications R&T</h2></div>
+      <div>
+        <div class="section-tag" style="color:var(--cyan)">Compétence 3 — Preuve & Réflexion</div>
+        <h2>Créer des outils et applications R&T</h2>
+      </div>
       <button class="close-btn" onclick="togglePanel('c3')">✕ Fermer</button>
     </div>
-    <div class="section-tag" style="color:var(--cyan);margin-bottom:1.2rem;">Document de preuve (trace)</div>
-    <div class="proof-grid">
-      <div class="proof-box"><div class="proof-icon">📍</div><div class="proof-title">Contexte</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">📚</div><div class="proof-title">Savoirs</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">🛠</div><div class="proof-title">Savoir-faire</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box"><div class="proof-icon">🤝</div><div class="proof-title">Savoir-être</div><div class="proof-body"><em>[À remplir]</em></div></div>
-      <div class="proof-box wide"><div class="proof-icon">✅</div><div class="proof-title">Tâche réalisée &amp; Résultats</div><div class="proof-body"><em>[À remplir]</em></div></div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--cyan)">Contexte Du Projet</div>
+      <div class="jordao-item">
+        Dans le cadre de la SAÉ 1.04 "Se présenter sur Internet", j'ai conçu et développé un
+        <strong>site web de présentation personnelle</strong> en utilisant le framework Symfony,
+        le langage HTML et les feuilles de style CSS. Ce projet m'a permis d'acquérir les bases
+        de la programmation web et de comprendre l'architecture d'une application web moderne.
+      </div>
     </div>
-    <div class="section-tag" style="color:var(--cyan);margin-bottom:1.2rem;">Analyse réflexive — Modèle de Gibbs</div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--cyan)">Technologies Et Concepts Mis En Œuvre</div>
+      <div class="jordao-item"><strong>Symfony (Framework PHP) :</strong> <span>Utilisation des commandes Symfony en ligne de commande pour créer le projet, générer les contrôleurs, configurer les routes et lancer le serveur de développement.</span></div>
+      <div class="jordao-item"><strong>HTML (HyperText Markup Language) :</strong> <span>Structuration des pages web avec les balises HTML5 : création des templates Twig, mise en place du contenu (textes, images, liens) et organisation sémantique des pages.</span></div>
+      <div class="jordao-item"><strong>CSS (Cascading Style Sheets) :</strong> <span>Mise en forme et stylisation des pages : couleurs, typographies, mise en page responsive, animations et effets visuels.</span></div>
+      <div class="jordao-item"><strong>Architecture MVC :</strong> <span>Compréhension du modèle Modèle-Vue-Contrôleur utilisé par Symfony : séparation de la logique métier, de la présentation et du routage.</span></div>
+      <div class="jordao-item"><strong>Git & GitHub :</strong> <span>Versionnage du code source et hébergement du projet sur GitHub pour le déploiement via GitHub Pages.</span></div>
+    </div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--cyan)">Captures Du Projet</div>
+      <div class="captures-grid">
+        <div class="capture-box">
+          <!-- <img src="images/capture-symfony.png" alt="Commandes Symfony"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">⚙️ Commandes Symfony (terminal)</div>
+        </div>
+        <div class="capture-box">
+          <!-- <img src="images/capture-html.png" alt="Code HTML"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">🖊️ Écriture du code HTML / Twig</div>
+        </div>
+        <div class="capture-box">
+          <!-- <img src="images/capture-site.png" alt="Site web rendu"/> -->
+          <div class="capture-placeholder"><span>🖼️</span><p>Ajoute ta capture ici</p></div>
+          <div class="capture-label">🌐 Rendu final du site web</div>
+        </div>
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted);font-style:italic;">💡 Pour ajouter tes captures : décommente les balises img et remplace le chemin par tes fichiers.</p>
+    </div>
+
+    <div class="jordao-block">
+      <div class="jordao-block-title" style="color:var(--cyan)">Démarche Du Projet</div>
+      <div class="jordao-item">
+        Le projet s'est déroulé en plusieurs étapes : installation et prise en main de Symfony,
+        création de la structure du site (routes, contrôleurs, templates Twig), développement
+        des différentes pages (accueil, CV, hobbies, portfolio), mise en forme avec CSS,
+        puis déploiement du projet sur GitHub. Ce projet constitue le e-portfolio que vous consultez actuellement.
+      </div>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 
 <hr class="hr"/>
 
+<!-- CONTACT -->
 <div class="section" id="contact">
   <div class="section-tag">Me joindre</div>
   <h2>Contactez-moi</h2>
   <p class="section-sub">Une question sur mon parcours ? N'hésite pas !</p>
   <div class="contact-wrap">
-    <div class="form-group"><label class="form-label" for="name">Nom</label><input type="text" id="name" class="form-input" placeholder="Votre nom"/></div>
-    <div class="form-group"><label class="form-label" for="email">Email</label><input type="email" id="email" class="form-input" placeholder="Votre email"/></div>
-    <div class="form-group"><label class="form-label" for="message">Message</label><textarea id="message" class="form-textarea" placeholder="Votre message"></textarea></div>
+    <div class="form-group"><label class="form-label">Nom</label><input type="text" id="name" class="form-input" placeholder="Votre nom"/></div>
+    <div class="form-group"><label class="form-label">Email</label><input type="email" id="email" class="form-input" placeholder="Votre email"/></div>
+    <div class="form-group"><label class="form-label">Message</label><textarea id="message" class="form-textarea" placeholder="Votre message"></textarea></div>
     <button class="form-submit" onclick="handleContact()">Envoyer le message</button>
     <p id="form-feedback" style="margin-top:1rem;font-size:0.8rem;color:var(--violet2);display:none;text-align:center;">✅ Message envoyé !</p>
   </div>
