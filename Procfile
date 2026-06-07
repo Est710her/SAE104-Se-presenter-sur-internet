@@ -1,5 +1,2 @@
-[phases.build]
-cmds = ["composer install --no-dev --optimize-autoloader"]
-
-[start]
-cmd = "php -S 0.0.0.0:$PORT -t public/"
+composer install --no-dev --optimize-autoloader 
+php -S 0.0.0.0:$PORT -t public/"
