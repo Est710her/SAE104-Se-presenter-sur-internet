@@ -3,6 +3,6 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y unzip
 COPY . .
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 EXPOSE 8080
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "public/"]
