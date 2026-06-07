@@ -1,1 +1,5 @@
-web: php -S 0.0.0.0:$PORT -t public/
+[phases.build]
+cmds = ["composer install --no-dev --optimize-autoloader"]
+
+[start]
+cmd = "php -S 0.0.0.0:$PORT -t public/"
