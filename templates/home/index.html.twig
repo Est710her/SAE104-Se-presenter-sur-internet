@@ -101,12 +101,9 @@
     .capture-box{background:rgba(18,16,43,0.8);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
     .capture-box img{width:100%;height:200px;object-fit:cover;display:block;border-bottom:1px solid var(--border);}
     .capture-label{padding:0.7rem 1rem;font-size:0.75rem;font-weight:600;color:var(--muted);}
-    /* CODE BLOCK */
     .code-block{background:#0a0a1a;border:1px solid rgba(108,92,231,0.25);border-radius:10px;padding:1.2rem 1.5rem;overflow-x:auto;margin-top:1rem;}
     .code-block pre{font-family:"Courier New",monospace;font-size:0.75rem;color:#a29bfe;line-height:1.8;white-space:pre-wrap;word-break:break-all;}
     .code-block pre .comment{color:#4a4a7a;}
-    .code-block pre .cmd{color:#74b9ff;}
-    /* AUTO-EVAL TABLE */
     .autoeval-table{width:100%;border-collapse:collapse;font-size:0.85rem;}
     .autoeval-table th{background:rgba(108,92,231,0.15);color:var(--violet2);font-weight:600;padding:0.9rem 1.2rem;text-align:left;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid var(--border);}
     .autoeval-table td{padding:0.9rem 1.2rem;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}
@@ -123,14 +120,6 @@
     .fill-v{background:linear-gradient(90deg,var(--violet),var(--violet2));}
     .fill-r{background:linear-gradient(90deg,var(--rose),#fd4a8a);}
     .fill-c{background:linear-gradient(90deg,var(--cyan),#0984e3);}
-    .contact-wrap{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:3rem;backdrop-filter:blur(8px);max-width:620px;margin:0 auto;}
-    .form-group{margin-bottom:1.2rem;}
-    .form-label{display:block;font-size:0.78rem;font-weight:500;margin-bottom:0.4rem;color:var(--muted);}
-    .form-input,.form-textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;color:var(--text);font-family:inherit;font-size:0.85rem;transition:border-color 0.2s;}
-    .form-input:focus,.form-textarea:focus{outline:none;border-color:rgba(108,92,231,0.5);box-shadow:0 0 0 3px rgba(108,92,231,0.1);}
-    .form-textarea{resize:vertical;min-height:120px;}
-    .form-submit{width:100%;padding:0.85rem;background:var(--violet);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.22s;}
-    .form-submit:hover{background:var(--violet3);transform:translateY(-2px);box-shadow:0 8px 24px rgba(108,92,231,0.4);}
     footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;position:relative;z-index:1;}
     footer p{font-size:0.75rem;color:var(--muted);}
     .footer-heart{color:var(--rose);}
@@ -569,22 +558,6 @@ docker run -tid --name portfolio --network SAE23_esther -p 82:80 monportfolio</p
   </div>
 </div>
 
-<hr class="hr"/>
-
-<!-- CONTACT -->
-<div class="section" id="contact">
-  <div class="section-tag">Me joindre</div>
-  <h2>Contactez-moi</h2>
-  <p class="section-sub">Une question sur mon parcours ? N'hésite pas !</p>
-  <div class="contact-wrap">
-    <div class="form-group"><label class="form-label">Nom</label><input type="text" id="name" class="form-input" placeholder="Votre nom"/></div>
-    <div class="form-group"><label class="form-label">Email</label><input type="email" id="email" class="form-input" placeholder="Votre email"/></div>
-    <div class="form-group"><label class="form-label">Message</label><textarea id="message" class="form-textarea" placeholder="Votre message"></textarea></div>
-    <button class="form-submit" onclick="handleContact()">Envoyer le message</button>
-    <p id="form-feedback" style="margin-top:1rem;font-size:0.8rem;color:var(--violet2);display:none;text-align:center;">✅ Message envoyé !</p>
-  </div>
-</div>
-
 <footer>
   <p>© 2026 – Nkene Nzame Djust Esther – BUT R&T</p>
 </footer>
@@ -600,16 +573,6 @@ docker run -tid --name portfolio --network SAE23_esther -p 82:80 monportfolio</p
     } else {
       document.getElementById("competences").scrollIntoView({ behavior: "smooth" });
     }
-  }
-  function handleContact() {
-    const n = document.getElementById("name").value;
-    const e = document.getElementById("email").value;
-    const m = document.getElementById("message").value;
-    if (!n || !e || !m) { alert("Merci de remplir tous les champs !"); return; }
-    document.getElementById("form-feedback").style.display = "block";
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("message").value = "";
   }
 </script>
 </body>
